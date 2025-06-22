@@ -1,0 +1,40 @@
+{
+	"name": "webdriverio-framework",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"wdio": "wdio run wdio.conf.ts",
+		"test": "ts-node ./src/runner/runTest.ts",
+		"rerun:failed": "ts-node ./src/runner/rerunFailed.ts",
+		"generate-report": "ts-node ./src/reporting/generateReport.ts",
+		"clean": "rimraf ./dist ./allure-results ./allure-report",
+		"build": "tsc --noEmit",
+		"lint": "tsc --noEmit --skipLibCheck"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"@types/archiver": "^6.0.3",
+		"@types/chai": "^5.2.2",
+		"@types/node": "^24.0.3",
+		"@wdio/allure-reporter": "^9.15.0",
+		"@wdio/cli": "^9.15.0",
+		"@wdio/local-runner": "^9.15.0",
+		"@wdio/mocha-framework": "^9.15.0",
+		"@wdio/selenium-standalone-service": "^8.14.0",
+		"@wdio/spec-reporter": "^9.15.0",
+		"chai": "^5.2.0",
+		"rimraf": "^6.0.1",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.8.3"
+	},
+	"dependencies": {
+		"archiver": "^7.0.1",
+		"csv-parser": "^3.2.0",
+		"dotenv": "^16.5.0",
+		"winston": "^3.17.0",
+		"xlsx": "^0.18.5"
+	}
+}

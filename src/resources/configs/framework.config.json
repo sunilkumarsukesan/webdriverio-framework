@@ -1,0 +1,5 @@
+{
+  "defaultTimeout": 5000,
+  "retryCount": 3,
+  "screenshotStrategy": "onFailure"
+}
