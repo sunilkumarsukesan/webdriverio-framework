@@ -1,6 +1,11 @@
 import { logFailedTest, clearFailedTests } from './src/runner/failureTracker';
 import * as dotenv from 'dotenv';
 dotenv.config();
+import { join } from 'path';
+import { tmpdir } from 'os';
+import { mkdtempSync } from 'fs';
+
+const uniqueProfileDir = mkdtempSync(join(tmpdir(), 'wdio-chrome-profile-'));
 
 const TEST_ENV = process.env.TEST_ENV || 'qa'; //this picks env from .env or defaults to 'qa'
 
@@ -61,6 +66,15 @@ export const config: WebdriverIO.Config = {
     capabilities: [
     {
       browserName: 'chrome',
+      'goog:chromeOptions': {
+        args: [
+          `--user-data-dir=${uniqueProfileDir}`,
+          '--headless=new',
+          '--disable-gpu',
+          '--no-sandbox',
+          '--disable-dev-shm-usage'
+        ]
+      }
     }
   ],
 
