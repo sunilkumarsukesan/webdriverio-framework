@@ -4,8 +4,9 @@ import { Status } from 'allure-js-commons';
 import { frameworkConfig } from '../utils/configManager';
 import { expect as chaiExpect } from 'chai';
 import * as path from 'path'; 
+import * as dotenv from 'dotenv';
 
-
+dotenv.config(); // Loads .env but only if not already defined
 const screenshotStrategy = process.env.SCREENSHOT_STRATEGY || 'onFailure';
 
 export async function captureScreenshot(title: string) {
