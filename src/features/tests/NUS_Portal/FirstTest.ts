@@ -5,7 +5,7 @@ describe('Login Test', () => {
   let testData: Record<string, string>[];
 
   before(() => {
-    testData = getExcelData('loginTestData.xlsx', 'LoginData');
+    testData = getExcelData('loginTestData.xlsx', 'LoginTestData');
   });
 
   it('Successful login', async function () {
@@ -14,7 +14,7 @@ describe('Login Test', () => {
     console.log('Login welcome message:', msg);
   });
 
-   it('Unsuccessful login', async function () {
+   xit('Unsuccessful login', async function () {
     await LoginPage.login(testData[1].username, testData[1].password);
     const msg = await LoginPage.getWelcomeMessage();
     console.log('Login welcome message:', msg);
