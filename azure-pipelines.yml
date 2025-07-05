@@ -1,8 +1,3 @@
-# Node.js
-# Build a general Node.js project with npm.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 trigger:
 - main
 
@@ -18,4 +13,11 @@ steps:
 - script: |
     npm install
     npm run test
-  displayName: 'npm install and build'
+  displayName: 'npm install and test'
+
+# ✅ Step to publish HTML report as a downloadable artifact
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish HTML Test Report'
+  inputs:
+    targetPath: '$(System.DefaultWorkingDirectory)/reports'
+    artifact: 'TestExecution_Report'
