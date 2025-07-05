@@ -25,6 +25,7 @@
 		"@wdio/mocha-framework": "^9.15.0",
 		"@wdio/selenium-standalone-service": "^8.14.0",
 		"@wdio/spec-reporter": "^9.15.0",
+		"allure-commandline": "^2.34.1",
 		"chai": "^5.2.0",
 		"rimraf": "^6.0.1",
 		"ts-node": "^10.9.2",
