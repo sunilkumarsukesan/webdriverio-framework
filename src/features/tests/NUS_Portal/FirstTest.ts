@@ -14,9 +14,9 @@ describe('Login Test', () => {
     console.log('Login welcome message:', msg);
   });
 
-   xit('Unsuccessful login', async function () {
+   it('Unsuccessful login', async function () {
     await LoginPage.login(testData[1].username, testData[1].password);
-    const msg = await LoginPage.getWelcomeMessage();
-    console.log('Login welcome message:', msg);
+    //const msg = await LoginPage.getWelcomeMessage();
+    //console.log('Login welcome message:', msg);
   });
 });
