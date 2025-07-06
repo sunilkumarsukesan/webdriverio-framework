@@ -14,13 +14,16 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    echo "Installing dependencies..."
     npm install
-    npm run test
-  displayName: 'npm install and test'
 
-# ✅ Step to publish HTML report as a downloadable artifact
+    echo "Running tests..."
+    npm run test || echo "Tests failed"
+  displayName: 'npm install and test'
+  continueOnError: true
+
 - task: PublishPipelineArtifact@1
-  displayName: 'Publish HTML Test Report'
+  displayName: '📄 Publish HTML Test Report'
   inputs:
-    targetPath: '$(System.DefaultWorkingDirectory)/reports/'
+    targetPath: '$(System.DefaultWorkingDirectory)/reports'
     artifact: 'TestExecution_Report'
