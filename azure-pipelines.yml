@@ -22,5 +22,5 @@ steps:
 - task: PublishPipelineArtifact@1
   displayName: 'Publish HTML Test Report'
   inputs:
-    targetPath: '$(System.DefaultWorkingDirectory)/reports'
+    targetPath: '$(System.DefaultWorkingDirectory)/reports/'
     artifact: 'TestExecution_Report'
