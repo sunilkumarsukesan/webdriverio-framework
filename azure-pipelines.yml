@@ -5,7 +5,7 @@ variables:
   SCREENSHOT_STRATEGY: 'always'
 
 pool:
-  vmImage: ubuntu-latest
+  agent: Default
 
 steps:
 - task: NodeTool@0
