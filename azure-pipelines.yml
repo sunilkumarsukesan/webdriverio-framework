@@ -5,7 +5,7 @@ variables:
   SCREENSHOT_STRATEGY: 'always'
 
 pool:
-  agent: Default
+  name: Default
 
 steps:
 - task: NodeTool@0
